@@ -27,6 +27,6 @@ $info['titre'] to $info['title']
 
 
 FetchVideo::getInfoYoutube('89ScoHpaZaw');
-This is a Static method which return an array contain all informations you need about a video on Youtube (title,like,views,etc ...)
+This is a Static method which return an array contain all informations you need about a video on Youtube (title,likes,views,etc ...)
 you can simply modify the name of key of the array
 $info['titre'] to $info['title']
