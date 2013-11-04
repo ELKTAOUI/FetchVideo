@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <?php
 
-require_once "stat.php";
+require_once "FetchVideo.php";
 
 //$tab4=FetchVideo::getInfoYoutubeChanel('UCqyku6Kdofy1nV86yh9R8n8A');
 //$tab3=FetchVideo::getInfVimeoChanel('delicioussandwich');
