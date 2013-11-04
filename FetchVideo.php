@@ -4,13 +4,15 @@
 */
 class FetchVideo 
 {
+
+	//Youtube Video
 	static public function getInfoYoutube($id)
 	{
 		$info=array();
 		$link='http://gdata.youtube.com/feeds/api/videos/'.$id.'?v=2&alt=rss';
 		$xml=@simplexml_load_file($link);
 		if(!$xml){
-			exit('Error: no video with id "' . $name . '" was found. Please specify the id of a existing video.');
+			exit('Error: no video with id "' . $id . '" was found. Please specify the id of a existing video.');
 		}
 			$media = $xml->children('http://search.yahoo.com/mrss/');
 		    $gd=$xml->children('http://schemas.google.com/g/2005');
@@ -65,12 +67,13 @@ class FetchVideo
 		    return $info;
 	}
 
+	//Vimeo video
 	static function getInfoVimeo($id)
 	{	
 		$link='http://vimeo.com/api/v2/video/'.$id.'.xml';
 		$xml=@simplexml_load_file($link);
 		if(!$xml){
-			exit('Error: no video with id "' . $name . '" was found. Please specify the id of a existing video.');
+			exit('Error: no video with id "' . $id . '" was found. Please specify the id of a existing video.');
 		}
 		$info['title']=$xml->video->title;
 		$info['description']=$xml->video->description;
@@ -96,6 +99,7 @@ class FetchVideo
 		return $info;
 	}
 
+	//Youtube Channel
 	static function getInfoYoutubeChanel($name)
 	{
 		$info=array();
@@ -126,6 +130,7 @@ class FetchVideo
 
 	}
 
+	//Vimeo Channel
 	static function getInfVimeoChanel($name)
 	{
 		$link='http://vimeo.com/api/v2/channel/'.$name.'/info.xml';
